@@ -1,0 +1,20 @@
+../cherry stock.csv stock graph --invert --title="The stock we should have bought" --ytitle="Price in euros" --xtitle="Days from January 1990"; pdflatex stock.tex; convert stock.pdf stock.png
+
+../../cherry banks.csv banks graph --title="Banks during the financial crisis" --xtitle="Dates (from 2005 to 2010)" --ytitle="Stock Market Price" --invert ; pdflatex banks.tex; convert banks.pdf banks.png
+
+../../cherry random.csv random graph --title="Some functions" --nolabels --noheaders --color=0 ; pdflatex random.tex; convert random.pdf random.png
+
+../../cherry roots.csv roots graph --title="Some other functions in rainbow colors" --noheaders --color=2 --linewidth=1.5; pdflatex roots.tex; convert roots.pdf roots.png
+
+../../cherry squares.csv squares graph --title="Some more functions in heat colors" --noheaders --color=3 --linewidth=1.5; pdflatex squares.tex; convert squares.pdf squares.png
+
+../../cherry sinuses.csv sinuses histogram --title="Expenses during the year" --hsep=0 --hspace=0.5; pdflatex sinuses.tex; convert sinuses.pdf sinuses.png
+convert -size 390x390 -transparent "#FFFFFF" sinuses.pdf small/sinuses.png
+convert -size 800x800 -transparent "#FFFFFF" sinuses.pdf big/sinuses.png
+
+
+../../cherry sinusesneg.csv sinusesneg histogram --title="Expenses during the year" --hsep=0 --hspace=0.5
+pdflatex sinusesneg.tex
+
+rm *.aux 
+rm *.log
